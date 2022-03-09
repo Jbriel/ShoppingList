@@ -1,5 +1,15 @@
 Uses node version 14.15.5
+To Build:
+npm run Build
+
+To Run:
+npm run start
+
+To Run the Database:
+Make sure you have docker installed 
+
+docker run --name postgres-db -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 
 todo:
-add process env variables
-remove hard coding for paths in main app
+Add schema checking on routes
+
