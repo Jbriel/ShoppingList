@@ -1,0 +1,5 @@
+Uses node version 14.15.5
+
+todo:
+add process env variables
+remove hard coding for paths in main app

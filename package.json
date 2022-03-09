@@ -1,0 +1,22 @@
+{
+  "name": "veritone",
+  "version": "1.0.0",
+  "description": "Uses node version 14.15.5",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "node": "^17.5.0",
+    "react": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
+    "react-with-styles": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
