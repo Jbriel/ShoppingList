@@ -13,7 +13,10 @@ export function mapStateToProps(state) {
 
 export function mapDispatchToProps(dispatch) {
   return {
-    getShoppingListItems: () => dispatch(ShoppingListActions.getShoppingListItems())
+    getShoppingListItems: () => dispatch(ShoppingListActions.getShoppingListItems()),
+    deleteShoppingListItem: itemID => dispatch(ShoppingListActions.deleteShoppingListItem(itemID)),
+    createShoppingListItem: item => dispatch(ShoppingListActions.createShoppingListItem(item)),
+    updateShoppingListItem: item => dispatch(ShoppingListActions.updateShoppingListItem(item)),
   };
 }
 
