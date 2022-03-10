@@ -4,28 +4,16 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Navbar from './components/header';
+
+import ShoppingList from './containers/shoppingList'
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar/>
       <Routes>
-        <Route path='/' element={    <div className="App">
-                                  <header className="App-header">
-                                    <p>
-                                      Edit <code>src/App.js</code> and save to reload.
-                                    </p>
-                                    <a
-                                      className="App-link"
-                                      href="https://reactjs.org"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                    >
-                                      Learn React
-                                    </a>
-                                  </header>
-                                </div>}
-                                  />
-      <Route path='shoppingList' element={<div>Hello Shopping</div>}/>
+      <Route path='/' element={<ShoppingList />}/>
       </Routes>
     </BrowserRouter>
   );

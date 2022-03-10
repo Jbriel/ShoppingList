@@ -1,16 +1,9 @@
+import {RECEIVE_SHOPPING_LIST_ITEMS} from '../actions/ShoppingListActions'
 
-const API_CALL_REQUEST = "API_CALL_REQUEST";
-const API_CALL_SUCCESS = "API_CALL_SUCCESS";
-const API_CALL_FAILURE = "API_CALL_FAILURE";
-
-export default function shoppingListReducer(state = {}, action) {
+export default function shoppingListReducer(state = {shoppingListItems: [], type: ''}, action) {
     switch (action.type) {
-      case API_CALL_REQUEST:
-        return { ...state, fetching: true, error: null };
-      case API_CALL_SUCCESS:
-        return { ...state, fetching: false, dog: action.dog };
-      case API_CALL_FAILURE:
-        return { ...state, fetching: false, dog: null, error: action.error };
+      case RECEIVE_SHOPPING_LIST_ITEMS:
+        return { ...state, shoppingListItems: action.shoppingListItems, type: action.type};
       default:
         return state;
     }

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 
-import {testSagas} from './sagas'
+import watchAll from './sagas/ShoppingListSagas'
 import createSagaMiddleware from "redux-saga";
 import rootReducer from "./reducers";
 // reducer with initial state
@@ -10,4 +10,4 @@ export default createStore(
   rootReducer,
   applyMiddleware(sagaMiddleware)
 )
-// sagaMiddleware.run(testSagas.helloSaga)
+sagaMiddleware.run(watchAll)
