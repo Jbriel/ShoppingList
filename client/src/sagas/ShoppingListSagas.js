@@ -13,7 +13,7 @@ function* getShoppingListItems(action) {
 
 function* deleteShoppingListItem(action) {
   try {
-    // const weatherData = yield call(fetchWeather);
+    yield(ShoppingListAPI.deleteShoppingListItem(action.itemID))
     yield put(ShoppingListActions.crudCreateSuccess());
   } catch (e) {
     console.log(e);

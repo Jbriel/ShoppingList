@@ -12,10 +12,26 @@ import IconButton from "@mui/material/IconButton";
 import CreateIcon from "@mui/icons-material/Create";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import Grid from "@mui/material/Grid";
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 const ShoppingList = (props) => {
   const [shoppingListItems, setShoppingListItems] = useState([]);
   const [checked, setChecked] = React.useState([0]);
+  const [deleteModalOpen, setDeleteModalOpen] = React.useState(false);
+  const [deleteID, setDeleteID] = React.useState(0)
+
+  const handleDontDelete = () => {
+    setDeleteModalOpen(false)
+  }
+
+  const handleDelete = () => {
+    setDeleteModalOpen(false)
+    props.deleteShoppingListItem(deleteID)
+  }
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -60,8 +76,8 @@ const ShoppingList = (props) => {
                     <IconButton aria-label="comments">
                       <CreateIcon />
                     </IconButton>
-                    <IconButton aria-label="comments">
-                      <DeleteOutlineIcon />
+                    <IconButton onClick={() => {setDeleteModalOpen(true); setDeleteID(item.itemID)}} aria-label="comments">
+                      <DeleteOutlineIcon/>
                     </IconButton>
                   </div>
                 }
@@ -107,6 +123,27 @@ const ShoppingList = (props) => {
         FAKE DELETE
       </button> */}
       <Grid item xs={2}></Grid>
+      <Dialog
+        open={deleteModalOpen}
+        onClose={handleDontDelete}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+      <DialogTitle id="alert-dialog-title">
+          {"Delete Item?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Are you sure you want to delete this item? This can not be undone.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDontDelete}>Cancel</Button>
+          <Button variant="contained" onClick={handleDelete} autoFocus>
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Grid>
   );
 };

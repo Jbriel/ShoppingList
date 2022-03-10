@@ -10,6 +10,8 @@ Make sure you have docker installed
 
 docker run --name postgres-db -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 
-todo:
+future todo:
 Add schema checking on routes
-
+Add a front end model api system
+Abstract react code to multiple components
+Add proper error handling and logging on the server side end points 

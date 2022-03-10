@@ -1,7 +1,10 @@
 const models = require('../models');
 
 const getShoppingItems = async (req, res) => {
-    let shoppingItems = await models.shoppingListModel.findAll();
+    let shoppingItems = await models.shoppingListModel.findAll({order: [
+        ['itemID', 'ASC'],
+        ['itemName', 'ASC'],
+    ],});
     res.status(200).send({
         message: "Success",
         data: shoppingItems

@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
             field: "description",
             type: DataTypes.STRING,
             allowNull: false,
-          },
+          }
 
     }, {
     createdAt: 'creation_date',

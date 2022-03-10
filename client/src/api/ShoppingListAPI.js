@@ -21,3 +21,7 @@ const makeRequest = async (url, method = 'GET', body = {}) => {
 export const getShoppingListItems = async () => {
     return await makeRequest('/')
 }
+
+export const deleteShoppingListItem = async (itemID) => {
+    return await makeRequest('/', 'DELETE', {itemID})
+}
