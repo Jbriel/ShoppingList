@@ -1,4 +1,19 @@
+Gabriel Vigil
+3/9/2022
+
 Uses node version 14.15.5
+
+Stack used from Requirements:
+React 17
+React-Redux
+Redux-Saga
+React Router
+Material-UI
+Node
+Express
+Postgres
+REST
+
 To Build:
 npm run Build
 
@@ -10,7 +25,7 @@ Make sure you have docker installed
 
 docker run --name postgres-db -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 
-future todo:
+Future todo:
 Add schema checking on routes
 Add a front end model api system
 Abstract react code to multiple components
@@ -19,4 +34,3 @@ fix highlighting on frontend list
 add loading screen
 Fix edit/add item modal
 add purchased/checked to the database
-Form field checking for new and editing items
