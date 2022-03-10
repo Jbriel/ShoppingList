@@ -15,3 +15,8 @@ Add schema checking on routes
 Add a front end model api system
 Abstract react code to multiple components
 Add proper error handling and logging on the server side end points 
+fix highlighting on frontend list
+add loading screen
+Fix edit/add item modal
+add purchased/checked to the database
+Form field checking for new and editing items

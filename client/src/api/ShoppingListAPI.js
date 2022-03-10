@@ -25,3 +25,11 @@ export const getShoppingListItems = async () => {
 export const deleteShoppingListItem = async (itemID) => {
     return await makeRequest('/', 'DELETE', {itemID})
 }
+
+export const updateShoppingListItem = async (item) => {
+    return await makeRequest('/', 'PUT', item)
+}
+
+export const createShoppingListItem = async (item) => {
+    return await makeRequest('/', 'POST', item)
+}
